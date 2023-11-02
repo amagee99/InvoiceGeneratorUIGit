@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvoiceTemplates</title>
+</head>
+<body>
+    <div class="Menu">
+    <div class="MenuButtons">
+        <button class="optionsButton" (click)="toggleMenuOption('templatePrompts')" [class.active]="activeOption === 'templatePrompts'">Create New Invoice Template</button>
+        <button class="optionsButton" [disabled]="invoiceTemplates == null" (click)="toggleMenuOption('templatesList')" [class.active]="activeOption === 'templatesList'">Choose From Existing Templates</button>
+        <button class="optionsButton" [disabled]="selectedTemplateId == 0" [class.DisabledOption]="selectedTemplateId == 0" (click)="toggleInvoicePrompts()" >Continue</button>
+    </div>
+    <div class="dropdown">
+        <div class="dropdown-content" *ngIf ="activeOption == 'templatesList'">
+            <ul class="template-list"> 
+                <li *ngFor="let template of invoiceTemplates" (click)="selectTemplate(template.id)">
+                    {{template.templateName}}
+                </li>
+            </ul>
+        </div>
+      </div>
+      
+    </div>
+      <div class="templateCreationPrompts" *ngIf ="activeOption == 'templatePrompts'">
+        <form (ngSubmit)="onSubmit(InvoiceTemplate)">
+            <div class="templateInput">
+              <label >Template Name:</label>
+              <input  type="text" name="TemplateName" [(ngModel)]="InvoiceTemplate.templateName">
+            </div>
+            <div class="templateInput">
+                <label>Upload Blank Excel Template:</label>
+                <input type="text" name="TemplatePath" [(ngModel)]="InvoiceTemplate.templatePath">
+            </div>
+            <div class="templateInput">
+                <label>Enter Invoice Id Cell:</label>
+                <input type="text" name="InvoiceIdCell" [(ngModel)]="InvoiceTemplate.invoiceIdCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Invoice Date Cell:</label>
+                <input type="text" name="InvoiceDateCell" [(ngModel)]="InvoiceTemplate.invoiceDateCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Company Name Cell:</label>
+                <input type="text" name="CompanyNameCell" [(ngModel)]="InvoiceTemplate.companyNameCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Company PO Box Cell:</label>
+                <input type="text" name="CompanyPOBoxCell" [(ngModel)]="InvoiceTemplate.companyPOBoxCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Company Email Cell:</label>
+                <input type="text" name="CompanyEmailCell" [(ngModel)]="InvoiceTemplate.companyEmailCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Company Phone Cell:</label>
+                <input type="text" name="CompanyPhoneCell" [(ngModel)]="InvoiceTemplate.companyPhoneCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Customer Address Cell:</label>
+                <input type="text" name="CustomerAddressCell" [(ngModel)]="InvoiceTemplate.customerAddressCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Customer Name Cell:</label>
+                <input type="text" name="CustomerNameCell" [(ngModel)]="InvoiceTemplate.customerNameCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Shippee Address Cell:</label>
+                <input type="text" name="ShipeeAddressCell" [(ngModel)]="InvoiceTemplate.shipeeAddressCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Shippee Name Cell:</label>
+                <input type="text" name="ShipeeNameCell" [(ngModel)]="InvoiceTemplate.shipeeNameCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter PO Number Cell:</label>
+                <input type="text" name="PONumCell" [(ngModel)]="InvoiceTemplate.pONumCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Ship Date Cell:</label>
+                <input type="text" name="ShipDateCell" [(ngModel)]="InvoiceTemplate.shipDateCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Product Type Cell:</label>
+                <input type="text" name="ProductTypeCell" [(ngModel)]="InvoiceTemplate.productTypeCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Item ID Cell:</label>
+                <input type="text" name="ItemIdCell" [(ngModel)]="InvoiceTemplate.itemIdCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Item Quantity Cell:</label>
+                <input type="text" name="ItemQuantityCell" [(ngModel)]="InvoiceTemplate.itemQuantityCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Item Size Cell:</label>
+                <input type="text" name="ItemSizeCell" [(ngModel)]="InvoiceTemplate.itemSizeCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Item Price Cell:</label>
+                <input type="text" name="ItemPriceCell" [(ngModel)]="InvoiceTemplate.itemPriceCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Item Price Total Cell:</label>
+                <input type="text" name="ItemPriceTotalCell" [(ngModel)]="InvoiceTemplate.itemPriceTotalCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Invoice Total Price Cell:</label>
+                <input type="text" name="InvoiceTotalCell" [(ngModel)]="InvoiceTemplate.invoiceTotalCell">
+            </div>
+            <div class="templateInput">
+                <label >Enter Tracking Number Cell:</label>
+                <input type="text" name="TrackingNumberCell" [(ngModel)]="InvoiceTemplate.trackingNumberCell">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+          
+      </div>
+</body>
+</html>
+
