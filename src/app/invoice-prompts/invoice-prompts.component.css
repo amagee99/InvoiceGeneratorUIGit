@@ -1,0 +1,40 @@
+.MenuButtons{
+    padding: 10px;
+    padding: 10px;
+    background-color: #e6e6e6;
+  }
+  .optionsButton {
+    background-color: #7b9fce;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: solid rgb(0, 0, 0) 1px;
+    cursor: pointer;
+  }
+  .optionsButton:hover{
+    background-color: #627a99;
+  }
+  button.active {
+    background-color: #4b5f7a; 
+  }
+.invoiceCreationPrompts{
+    display: grid;
+    grid-gap: 10px;
+  }
+  .invoiceInput{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .invoiceInput label {
+    font-weight: bold;
+    margin-bottom: 5px; 
+  }
+  .invoiceInput input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+  }
+  

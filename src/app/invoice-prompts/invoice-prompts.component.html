@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="MenuButtons">
+        <button class="optionsButton" (click)="generateInvoice()">Continue</button>
+    </div>
+    <div class="invoiceCreationPrompts">
+        <form (ngSubmit)="onSubmit(invoice)">
+            <div class="invoiceInput">
+              <label >Enter Invoice Id:</label>
+              <input type="text" name="TemplateName" [(ngModel)]="invoice.id">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Company Name:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.companyName">
+              </div>
+            <div class="invoiceInput">
+              <label >Enter Company PO Box:</label>
+              <input type="text" name="TemplateName" [(ngModel)]="invoice.companyPOBox">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Company Email:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.companyEmail">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Company Phone:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.companyPhone">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Customer Address:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.customerAddress">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Customer Name</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.customerName">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Shipee Address:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.shipeeAddress">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Shipee Name:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.shipeeName">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Item Id:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.itemId">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Item Quantity:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.itemQuantity">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Item Size:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.itemSize">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Item Price:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.itemPrice">
+            </div>
+            <div class="invoiceInput">
+                <label >Enter Tracking Number:</label>
+                <input type="text" name="TemplateName" [(ngModel)]="invoice.trackingNumber">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    
+          
+      </div>
+</body>
+</html>
